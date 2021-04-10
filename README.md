@@ -42,4 +42,8 @@ and the bot should be started.
 
 - If you want to change the interval of saving the user time, change the variable "localInterval" to something else. I'd recommend having it above 5 seconds for both performance and to avoid issues with MongoDB 
 
+# Contact
+Shoot me a dm on Discord if you have any issues
+``stem#0002`` or create a issue. 
+
 
