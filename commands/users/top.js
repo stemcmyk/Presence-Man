@@ -11,7 +11,7 @@ module.exports = {
     var args = msg.content.split(" ");
     var incr = 5;
     if (args[1]) {
-      if (Number(args[1])) {
+      if (!isNaN(Number(args[1]))) {
         incr = Number(args[1]);
       } else {
         msg.channel.send(`<@${msg.author.id}>, Invalid number`);
@@ -24,9 +24,9 @@ module.exports = {
       );
       return;
     }
-    var times = await Database.fetchUser(msg.author.id);
+    var user = await Database.fetchUser(msg.author.id);
 
-    var srf = Basic_functions.sortTable(times.presences, incr);
+    var srf = Basic_functions.sortTable(user.presences, incr);
 
     const embed = new MessageEmbed()
       .setTitle(`Top ${incr} presence statuses`)
