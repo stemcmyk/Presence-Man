@@ -6,7 +6,7 @@ const Basic_functions = require("../../basic_functions");
 module.exports = {
   name: "find",
   category: "info",
-  description: "Finds a specific presence's time",
+  description: "Finds the top 3 results for something, arguments: [string]",
   run: async (client, msg, args) => {
     var userdata = await Database.fetchUser(msg.author.id);
 
