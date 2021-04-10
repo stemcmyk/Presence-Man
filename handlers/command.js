@@ -22,11 +22,11 @@ module.exports = (client) => {
 
       if (pull.name) {
         client.commands.set(pull.name, pull);
-        table.addRow(`${dir}/${file}`, "✅");
+        table.addRow(`${dir}/${file}`, "OK");
       } else {
         table.addRow(
           file,
-          `❌  -> missing a help.name, or help.name is not a string.`
+          `ERROR  -> missing a help.name, or help.name is not a string.`
         );
         continue;
       }
