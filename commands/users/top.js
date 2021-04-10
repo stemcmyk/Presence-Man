@@ -26,30 +26,7 @@ module.exports = {
     }
     var times = await Database.fetchUser(msg.author.id);
 
-    // Rework it to check how many presences there are after it has sorted them.
-    var new_times = times.presences.map((p) => {
-      return `${p.time}-${p.name}`;
-    });
-
-    var srf = new_times
-      .sort(function (a, b) {
-        var a_args = a.split("-");
-        var b_args = b.split("-");
-        return a_args[0] - b_args[0];
-      })
-      .reverse()
-      .map((item) => {
-        var item_args = item.split("-");
-        var new_item = { time: item_args[0], name: item_args[1] };
-        return new_item;
-      }); // srf == sorted, reversed, fixed
-
-    srf = srf.filter((item, index) => {
-      if (index < incr) {
-        return item;
-      }
-    });
-    console.log(srf);
+    var srf = Basic_functions.sortTable(times.presences, incr);
 
     const embed = new MessageEmbed()
       .setTitle(`Top ${incr} presence statuses`)

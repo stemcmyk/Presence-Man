@@ -27,4 +27,31 @@ function format_time(seconds) {
   return time;
 }
 
-module.exports = { format_time };
+var sortTable = (table, max) => {
+  var new_table = table.map((p) => {
+    return `${p.time}-${p.name}`;
+  });
+
+  var srf = new_table
+    .sort(function (a, b) {
+      var a_args = a.split("-");
+      var b_args = b.split("-");
+      return a_args[0] - b_args[0];
+    })
+    .reverse()
+    .map((item) => {
+      var item_args = item.split("-");
+      var new_item = { time: item_args[0], name: item_args[1] };
+      return new_item;
+    }); // srf == sorted, reversed, fixed
+  if (max) {
+    srf = srf.filter((item, index) => {
+      if (index < max) {
+        return item;
+      }
+    });
+  }
+  return srf;
+};
+
+module.exports = { format_time, sortTable };
