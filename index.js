@@ -57,7 +57,7 @@ client.on("ready", async () => {
             }
           }
         });
-      Database.updateTime(cuser.id, show, 5);
+      Database.updateTime(cuser.id, show, localInterval / 1000);
     });
   }, localInterval);
 });
