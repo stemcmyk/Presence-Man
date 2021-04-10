@@ -17,6 +17,7 @@ function createUserPreset(d) {
     username: d.name,
     discordId: d.id,
     presences: [],
+    weeklypresences: {},
   };
 }
 
@@ -87,6 +88,7 @@ var updateTime = async (id, presences, time) => {
   return new Promise(async function (rs, rr) {
     var userData = await fetchUser(id);
     presences.forEach((p) => {
+      // I know it's stupid to have the same code twice but with slight changes but i'm slightly lazy
       if (!p.applicationID) return;
       var find = userData.presences.find((data) => data.id == p.applicationID);
       if (find && find.id) {
@@ -100,6 +102,32 @@ var updateTime = async (id, presences, time) => {
           });
           console.log(
             `Reading new presence for (${id}). Presence Name: "${p.name}"`
+          );
+        }
+      }
+
+      // Weekly presence section
+      var date = new Date();
+      var ww = `${date.getFullYear()}:${date.getWeek()}`;
+      // Create the weeklypresence object if it does not exist
+      if (!userData.weeklypresences) userData.weeklypresences = {};
+      // Create the current weeks array if it does not exit
+      if (!userData.weeklypresences[ww]) userData.weeklypresences[ww] = [];
+
+      var find = userData.weeklypresences[ww].find(
+        (data) => data.id == p.applicationID
+      );
+      if (find && find.id) {
+        find.time += 5;
+      } else {
+        if (p.applicationID) {
+          userData.weeklypresences[ww].push({
+            id: p.applicationID,
+            name: p.name,
+            time: 5,
+          });
+          console.log(
+            `Reading new weekly (${ww}) presence for (${id}). Presence Name: "${p.name}"`
           );
         }
       }
