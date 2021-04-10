@@ -2,6 +2,8 @@
 This is very work in progres. 
 Tho, it does work with storing user presence and such
 
+Only doing this for fun and improving my programming skills :)
+
 **GUIDE:** 
 
 - First of all you should run:
