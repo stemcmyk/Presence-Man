@@ -4,7 +4,13 @@ Tho, it does work with storing user presence and such
 
 Only doing this for fun and improving my programming skills :)
 
-**GUIDE:** 
+# Preview
+![image](https://user-images.githubusercontent.com/51480428/114279520-68600700-9a35-11eb-96d5-eef62a0cab5d.png)
+![image](https://user-images.githubusercontent.com/51480428/114279525-6e55e800-9a35-11eb-97f3-37aeef6bab23.png)
+
+
+
+# GUIDE 
 
 - First of all you should run:
   ``npm i``  or ``yarn`` (if you have yarn installed) inside a terminal in the "Presence-Man" folder.
