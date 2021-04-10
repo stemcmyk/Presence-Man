@@ -29,7 +29,7 @@ module.exports = {
     var srf = Basic_functions.sortTable(user.presences, incr);
 
     const embed = new MessageEmbed()
-      .setTitle(`Top ${incr} presence statuses`)
+      .setTitle(`Top ${srf.length} presence statuses`)
       .setColor(0xff0000);
     embed.setAuthor(
       msg.author.username,

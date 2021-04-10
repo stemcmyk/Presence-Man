@@ -65,7 +65,9 @@ module.exports = {
       var srf = Basic_functions.sortTable(user.weeklypresences[ww], incr);
 
       const embed = new MessageEmbed()
-        .setTitle(`Top ${incr} presence statuses for ${year} week: ${week}`)
+        .setTitle(
+          `Top ${srf.length} presence statuses for ${year} week: ${week}`
+        )
         .setColor(0xff0000);
       embed.setAuthor(
         msg.author.username,
