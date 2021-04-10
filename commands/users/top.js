@@ -20,7 +20,7 @@ module.exports = {
     }
     if (incr > 10) {
       msg.channel.send(
-        `<@${msg.author.id}, number is too high. Use a number between 1 and 10! Otherwise use "-find 'presence'"`
+        `<@${msg.author.id}>, number is too high. Use a number between 1 and 10!`
       );
       return;
     }
