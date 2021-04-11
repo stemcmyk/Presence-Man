@@ -52,6 +52,6 @@ and the bot should be started.
 
 # Contact
 Shoot me a dm on Discord if you have any issues
-``stem#0002`` or create a issue. 
+``stem#4646`` or create a issue. 
 
 
