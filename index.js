@@ -7,7 +7,7 @@ const Database = require("./database");
 const Basic_functions = require("./basic_functions");
 
 const client = new Client();
-var prefix = process.env.prefix;
+var prefix = process.env.PREFIX;
 client.prefix = prefix;
 var excluded = ["Spotify"];
 const localInterval = 5000;
