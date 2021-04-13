@@ -61,7 +61,7 @@ module.exports = {
     var ww = `${year}:${week}`;
     var user = await Database.fetchUser(msg.author.id);
 
-    if (user.weeklypresences[ww]) {
+    if (user.weeklypresences[ww] && user.weeklypresences[ww].length > 0) {
       var srf = Basic_functions.sortTable(user.weeklypresences[ww], incr);
 
       const embed = new MessageEmbed()
